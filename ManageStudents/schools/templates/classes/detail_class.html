@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Truong trung hoc pho thong My Loc</h1>
+<h2 style="display: inline;">{{Class.name_class}}</h2>
+<a href="{% url 'Lop:update_class' Class.id %}">Edit</a>
+<a href="{% url 'Lop:delete_class' Class.id %}">Delete</a>
+<a href="">Add Student</a> <br />
+<h2>List of student in class</h2>
+{% for item in Class.student_set.all%}
+<ol>
+    <li>
+        <a href="#">{{item}}</a>
+        <p style="display: inline;">{{item.lop}}</p>
+    </li>
+</ol>
+{% endfor %}
+{% endblock %}

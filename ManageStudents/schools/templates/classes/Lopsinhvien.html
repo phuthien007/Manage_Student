@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Truong trung hoc pho thong My Loc</h1>
+{% if LS is not None %}
+{% for cl in LS %}
+<ul>
+    <li><a href="{% url 'Lop:detail_class' cl.id %}">{{ cl.name_class }}</a>- {{cl.descriptions}}</li>
+</ul>
+{% endfor %}
+{% else %}
+<p>Not data</p>
+{% endif %}
+<a href="{% url 'Lop:add_class' %}">Add Class</a>
+{% endblock %}
