@@ -2,13 +2,14 @@
 {% block content %}
 <main>
     <div class="container">
-        <h1>My Loc high school</h1>
+        <h2>Update student into {{class}}</h2>
         <form action="" method="POST">
             {% csrf_token %}
-            {{listClass.as_p}}
+            {{sf.as_p}}
             <input type="submit" name="submit" id="submit">
         </form>
+    </div>
     
-    </div>    
 </main>
+
 {% endblock %}

@@ -1,107 +1,62 @@
-<!DOCTYPE html>
+{% load static %}
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-    
-        *box-sizing{}
-        header{
-            width: 100%;
-            justify-content: center;
-            position: fixed;
-            background-color: aqua;
-            top: 0%;
-            left: 0%;
-        }
-        header>h1{
-            width: 30%;
-            color: rgb(196, 34, 34);
-            text-align:center ;
-            margin-left: 35%;
-        }
-        nav{
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 6%;
-            width: 100%;
-            background-color: blue;
-        }
-        div.home,div.about{
-            width: 10%;
-            font-weight: bold;
-            color: white;
-            margin-left: 35%;
-        }
-        div.Class{
-            width: 45%;
-            font-weight: bold;
-            color: white;
-            margin-left: 31%;
-        }
-    footer{
-        background-color: rgb(180, 62, 107);
-        width: 100%;
-        padding-top: 2%;
-        position: sticky;
-    }
-    h1.authen,p.authen{
-        color: aliceblue;
-        width: 30%;
-        padding-left: 18%;
-    }
-    p.authen{
-        width: 100%;
-        padding-left: 1%;
-        padding-top: 3%;
-        font-size: 139%;
-        font-weight: bold;
-    }
-    div.authen{
-        width: 40%;
-        margin-left: 30%;
-        display: flex;
-    }
-    div>a{
-        width: 37%;
-        text-decoration: none;
-    }
-    div.icon{
-        background-color: aqua;
-        margin-top: -5%;
-    }
-    </style>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+    <!-- MY CSS -->
+    <link rel="stylesheet" href="{% static 'header.css '%}">
+    <link rel="stylesheet" href="{% static 'listclass.css' %}">
 </head>
-<body>
-    <header class="header">
-        <h1>Manager Student</h1>
+
+<body  style="background-image: url(https://kenh14cdn.com/2020/9/25/hinh-nen-iphone-11-1600990116056809485952.jpg); background-size: cover;">
+    <header class="col-12">
+        <img src="http://thpt-myloc.namdinh.edu.vn/upload/50818/20181221/bia-web.jpg" alt="thpt Mỹ Lộc">
     </header>
+<div>
     <nav>
-        <a href="/" style="
-        background-color: red;
-        width: 10%;
-    "><div class="home"><p>Home</p></div></a>
-        <a href="/about" style="
-        width: 10%;
-        background-color: black;
-    "><div class="about"><p>About</p></div></a>
-    <a href="{% url 'Lop:show_class' %}" style="
-        background-color: red;
-        width: 12%;
-    "><div class="Class"><p>List Class</p></div></a>
-    </nav>
-    <section>
-        {% block content %}
-        {% endblock %}
-    </section>
-    <footer>
-       <div class="authen">
-            <h1 class="authen">Made By</h1>
-            <a href=""><p class="authen">Tran Thien Phu</p></a>
-            <div class="icon">icon</div>
+        <div class="container">
+            <div class="row">
+               
+                <ul class="col-12 navMenu">
+                    <li>
+                        <a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                    </li>
+                    <li>    
+                        <a href="{% url 'Lop:show_class' %}"><i class="fa fa-list" aria-hidden="true"></i> List Class</a>
+                    </li>
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        
-    </footer>
+    </nav>
+{% block content %}
+{% endblock %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</div>
+    
 </body>
+
 </html>

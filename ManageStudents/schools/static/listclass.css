@@ -1,0 +1,58 @@
+main {
+    text-align: center;
+    font-family: segoe ui-monospace;
+    margin-top: 30px;
+}
+
+main h1 {
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+main .grade {
+    border: solid 1px wheat;
+}
+
+.grade h2 {
+    border-bottom: solid 1px wheat;
+    padding: 10px;
+}
+
+.grade .list-grade {}
+
+.list-grade li {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: solid 1px wheat;
+    transition: 0.4s;
+}
+
+.list-grade li:hover {margin-left: 10px;position: relative;}
+
+.list-grade a {
+    text-decoration: none;
+    color: #0000fffa;
+    width: 100%;
+}
+
+
+.list-grade i {
+    color: blue;
+    margin-top: 5px;
+}
+.list-grade .tinhnang{
+    position: absolute;
+    right: 0;
+    background: wheat;
+    width: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+}
+.list-grade li:hover .tinhnang
+{   opacity: 1;
+    visibility: visible;
+
+}
+.tinhnang li{}
+.tinhnang a{}

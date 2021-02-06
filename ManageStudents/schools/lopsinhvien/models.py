@@ -16,7 +16,7 @@ class Student(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     id_student = models.CharField(max_length=50)
-    tieusu = models.TextField()
+    detail_per = models.CharField(max_length=1000)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+    <h1>My Loc high school</h1>
+    <h1>Class  {{Cur_class}}</h1>
+    <h2 style="display: inline;">Student name: {{Stu}}</h2>
+    <div class="container">
+
+        <div class="col-12 col-md-4 grade">
+            <h2>infomation of student </h2>
+
+            <ul class="list-grade">
+                <li>
+                    <a href="">
+                        <p>{{Stu}}</p>
+                    </a>
+                    <ul class="tinhnang">
+                        <li>
+                            <a href="{% url 'Lop:update_student' Cur_class.id Stu.id %}"><i
+                                    class="fas fa-edit    "></i></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'Lop:delete_student' Cur_class.id Stu.id %}"><i
+                                    class="fas fa-trash-alt    "></i></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>first name: {{Stu.first_name}}</p>
+
+                </li>
+                <li>
+                    <p>first name: {{Stu.first_name}}</p>
+                </li>
+                <li>
+                    <p>last name: {{Stu.last_name}}</p>
+                </li>
+                <li>
+                    <p>class: {{Stu.lop}}</p>
+                </li>
+                <li>
+                    <p>id student: {{Stu.id_student}}</p>
+                </li>
+                <li>
+                    <p>tieu su: {{Stu.detail_per}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

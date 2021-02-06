@@ -1,15 +1,78 @@
-{% extends 'base.html' %}
+{% extends 'home.html' %}
 {% block content %}
+<main>
+    <h1>My Loc high school</h1>
+    <div class="container">
+        <div class="row">
+     
+            <div class="col-12 col-md-4 grade">
+                <h2>Grade 12</h2>
+                {% if LS is not None %}
+                {% for cl in LS %}
+                <ul class="list-grade">
+                    <li>
+                        <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                        <a href="{% url 'Lop:detail_class' cl.id %}">
 
-<h1>Truong trung hoc pho thong My Loc</h1>
-{% if LS is not None %}
-{% for cl in LS %}
-<ul>
-    <li><a href="{% url 'Lop:detail_class' cl.id %}">{{ cl.name_class }}</a>- {{cl.descriptions}}</li>
-</ul>
-{% endfor %}
-{% else %}
-<p>Not data</p>
-{% endif %}
-<a href="{% url 'Lop:add_class' %}">Add Class</a>
+                            {{ cl.name_class }}</a>
+
+                        <ul class="tinhnang">
+                            <li>
+                                <a href="{% url 'Lop:update_class' cl.id %}"><i class="fas fa-edit    "></i></a>
+                            </li>
+                            <li>
+                                <a href="{% url 'Lop:delete_class' cl.id %}"><i
+                                        class="fas fa-trash-alt    "></i></a>
+                            </li>
+                        </ul>
+                    </li>
+                    {% endfor %}
+                    {% else %}
+                    <p>Not data</p>
+                    {% endif %}
+                    <a href="{% url 'Lop:add_class' %}">Add Class</a>
+            </div>
+            <div class="col-12 col-md-4 grade">
+                <h2>Grade 11</h2>
+                <ul class="list-grade">
+                    <li>
+                        <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                        <a href="">
+                        
+                            Lớp 11A1</a>
+
+                        <ul class="tinhnang">
+                            <li>
+                                <a href=""><i class="fas fa-edit    "></i></a>
+                            </li>
+                            <li>
+                                <a href=""><i class="fas fa-trash-alt    "></i></a>
+                            </li>
+                        </ul>
+                    </li>
+                <a href="{% url 'Lop:add_class' %}">Add Class</a>
+            </div>
+            <div class="col-12 col-md-4 grade">
+                <h2>Grade 10</h2>
+                <ul class="list-grade">
+                    <li>
+                        <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                        <a href="">
+                        
+                            Lớp 10A1</a>
+
+                        <ul class="tinhnang">
+                            <li>
+                                <a href=""><i class="fas fa-edit    "></i></a>
+                            </li>
+                            <li>
+                                <a href=""><i class="fas fa-trash-alt    "></i></a>
+                            </li>
+                        </ul>
+                    </li>
+                <a href="{% url 'Lop:add_class' %}">Add Class</a>
+            </div>
+        </div>
+    </div>
+</main>
 {% endblock %}

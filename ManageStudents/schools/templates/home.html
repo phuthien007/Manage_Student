@@ -1,4 +1,59 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="container">
+    {% lorem 10p random %}
+    <h1>Manage Student System</h1>
+    <h2>List options</h2>
+    <ul>
+        <li>
+            Option 1: show list of classes in school
+        </li>
+        <li>
+            Option 2: show list of students in class
+        </li>
+        <li>
+            Option 3: Edit class in school
+        </li>
+        <li>
+            Option 4: Delete class in school
+        </li>
+        <li>
+            Option 5: Add class into school
+        </li>
+        <li>
+            Option 6: Delete student in class
+        </li>
+        <li>
+            Option 7: Edit student in class
+        </li>
+        <li>
+            Option 8: Add student into class
+        </li>
+    </ul>
+    <div class="author" style="width: 46%;display: flex; ">
+        <h5 style="width: 30%;">Technical Team</h5>
+        <div style="width: 60%;margin-top: 0%;display: flex;">
+            <div class="backend" style="width: 30%;">
+                <p style="display: inline;font-size: 80%;">Backend: </p>
+                <a href="https://www.facebook.com/thien.phu.14032001/" style="
+                font-size: 59%;
+            ">
+                    <p style="
+    font-weight: bold;
+">Tran Thien Phu</p>
+                </a></br>
+            </div>
+            <div class="fontend" style="width: 56%;margin-top: 0%;">
+                <p style="display: inline;font-size: 65%;">Suport tecnical fontend with author: </p>
+                <a href="https://www.facebook.com/quanghaktkt">
+                    <p style="
+                    font-size: 49%;
+                    font-weight: bold;
+                ">Dang Van Quang Ha</p>
+                </a>
+            </div>
+        </div>
 
-{%endblock%}
+    </div>
+</div>
+{% endblock %}

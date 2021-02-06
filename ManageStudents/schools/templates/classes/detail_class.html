@@ -1,18 +1,44 @@
 {% extends 'base.html' %}
 {% block content %}
+<main>
+    <h1>My Loc high school</h1>
+    <ul class="list-grade">
+        <li>
+            <h2>{{Class}}</h2>
+            <ul class="tinhnang">
+                <li>
+                    <a href="{% url 'Lop:update_class' Class.id %}"><i class="fas fa-edit    "></i></a>
+                </li>
+                <li>
+                    <a href="{% url 'Lop:delete_class' Class.id %}"><i class="fas fa-trash-alt    "></i></a>
+                </li>
+            </ul>
+        </li>
+    </ul>
 
-<h1>Truong trung hoc pho thong My Loc</h1>
-<h2 style="display: inline;">{{Class.name_class}}</h2>
-<a href="{% url 'Lop:update_class' Class.id %}">Edit</a>
-<a href="{% url 'Lop:delete_class' Class.id %}">Delete</a>
-<a href="">Add Student</a> <br />
-<h2>List of student in class</h2>
-{% for item in Class.student_set.all%}
-<ol>
-    <li>
-        <a href="#">{{item}}</a>
-        <p style="display: inline;">{{item.lop}}</p>
-    </li>
-</ol>
-{% endfor %}
+    <div class="container">
+        <div class="col-12 col-md-4 grade">
+            <h2>List student in class </h2>
+            {% for item in Class.student_set.all %}
+            <ul class="list-grade">
+                <li>
+                    <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                    <a href="{% url 'Lop:detail_student' Class.id item.id %}">{{item}}</a>
+
+                    <ul class="tinhnang">
+                        <li>
+                            <a href="{% url 'Lop:update_student' Class.id item.id %}"><i
+                                    class="fas fa-edit    "></i></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'Lop:delete_student' Class.id item.id %}"><i
+                                    class="fas fa-trash-alt    "></i></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            {% endfor %}
+            <a href="{% url 'Lop:add_student' Class.id %}">Add student</a>
+        </div>
+</main>
 {% endblock %}
